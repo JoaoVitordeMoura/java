@@ -1,20 +1,26 @@
 package com.mycompany.buscasarray;
 
+import java.util.Random;
+import java.util.Arrays;
+
 public class BuscasArray {
     public static void main(String[] args) {
-        int tamanho = 10000000;
+        int tamanho = 1000000;
         int[] vetor = new int[tamanho];
+        Random random = new Random();
 
         for (int i = 0; i < tamanho; i++) {
-            vetor[i] = i + 1;
+            vetor[i] = random.nextInt(100000);
         }
+        
+        Arrays.sort(vetor);
 
-        int numeroBuscado = 9999999;
+        int numeroBuscado = 456325;
 
         int resultado = buscaBinaria(vetor, numeroBuscado);
 
         if (resultado != -1) {
-            System.out.println("Número encontrado na posição: " + resultado + ", levando " + " etapas.");
+            System.out.println("Número encontrado na posição: " + resultado);
         } else {
             System.out.println("Número não encontrado.");
         }

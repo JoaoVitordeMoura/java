@@ -1,15 +1,25 @@
 package com.mycompany.buscasequencial;
 
+import java.util.Random;
+import java.util.Arrays;
+
 public class BuscaSequencial {
     public static void main(String[] args) {
-        int tamanho = 10000000;
+        int tamanho = 100000;
         int[] vetor = new int[tamanho];
+        Random random = new Random();
 
         for (int i = 0; i < tamanho; i++) {
-            vetor[i] = i + 1;
+            vetor[i] = random.nextInt(100000);
         }
         
-        int numeroBuscado = 9999999;
+        Arrays.sort(vetor);
+        
+        for (int i = 0; i < tamanho; i++) {
+            System.out.println(vetor[i]);
+        }
+                
+        int numeroBuscado = 45159;
 
         int resultado = buscaSequencial(vetor, numeroBuscado);
 
@@ -29,4 +39,3 @@ public class BuscaSequencial {
         return -1;
     }
 }
-
