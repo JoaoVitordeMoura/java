@@ -5,8 +5,9 @@ import javax.swing.JFrame;
 public abstract class Win extends JFrame{
     public Win(String titulo, int largura, int altura, int posX, int posY,int fechamento){
         setupFrame(titulo, largura, altura, posX, posY, fechamento);
-        setVisible(true);
+        
         setupComponents();
+        setVisible(true);
     }
     public Win(String titulo, int largura, int altura, int fechamento){
         this(titulo, largura, altura, -1, -1, fechamento);
