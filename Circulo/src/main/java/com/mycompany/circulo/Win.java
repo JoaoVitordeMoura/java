@@ -36,10 +36,9 @@ public abstract class Win extends JFrame{
             y = raio * Math.sin(angulo);
             
             component.setSize(component.getPreferredSize());
-            double delta = 2 * Math.PI / component.getWidth() ;
             component.setLocation((int)Math.round(x) + 180, (int)Math.round(y) + 150);
             add(component);
-            angulo += delta;
+            angulo += 0.52;
             
         }
             

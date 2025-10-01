@@ -14,7 +14,7 @@ public class Principal extends Win{
     protected void setupComponents(){
         setLayout(null);          
           raio = 50;
-          angulo = Math.PI / 2;
+          angulo = Math.PI / 2;// 90 graus
           
         S = new JLabel("S");
         E = new JLabel("E");
