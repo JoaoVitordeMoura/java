@@ -1,3 +1,4 @@
 com\mycompany\gotosleep\GoToSleep.class
 com\mycompany\gotosleep\Win.class
 com\mycompany\gotosleep\Principal.class
+com\mycompany\gotosleep\Principal$InserirHandler.class
