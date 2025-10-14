@@ -62,54 +62,53 @@ public class Principal extends Win{
         addRow(cliente);
         addRow(inserir, cancelar);
         
-        //Criando o evento de clique omggggaaaaa
-        InserirHandler insdl = new InserirHandler();
-        inserir.addActionListener(insdl);
-        
-          
+        //Criando o evento de clique omggggaaaaa        
+        inserir.addActionListener(this::inserir_click);
+        cancelar.addActionListener(this::cancelar_click);
         setVisible(true);
-        
-        
     }
-    //Classe do evento clique QUE HERDA DO ACTION LISTENER
-    private class InserirHandler implements ActionListener{
-        @Override
-        public void actionPerformed(ActionEvent e){
-            String id = Principal.this.id.getText();
-            String nome = Principal.this.nome.getText();
-            String telefone = Principal.this.telefone.getText();
-            String tipo;
-            String sexo;
-            String amizade = null;
+        
+    private void inserir_click(ActionEvent e){
+        String id = Principal.this.id.getText();
+        String nome = Principal.this.nome.getText();
+        String telefone = Principal.this.telefone.getText();
+        String tipo;
+        String sexo;
+        String amizade = null;
                        
-            if(Principal.this.pessoa.isSelected()){
-                tipo = "Pessoa";
-            }
-            else{
-                tipo = "Empresa";
-            }
+//            if(Principal.this.pessoa.isSelected()){
+//                tipo = "Pessoa";
+//            }
+//            else{
+//                tipo = "Empresa";
+//            }
+            //Jeito diferente de fazer IF ELSE
+            tipo = Principal.this.pessoa.isSelected() ? "Pessoa" : "Empresa";
             
-            if(Principal.this.sexo.getSelectedIndex() == 0){
-                sexo = "Masculino";
-            }
-            else if (Principal.this.sexo.getSelectedIndex() == 1){
-                sexo = "Femenino";               
-            }
-            else{
-                sexo = "VITORRRRR";
-            }
+ 
             
-            if(Principal.this.amigo.isSelected() && Principal.this.cliente.isSelected()){
-                amizade = "Amigo e Cliente";
+        if(Principal.this.sexo.getSelectedIndex() == 0){
+            sexo = "Masculino";
+        }
+        else if (Principal.this.sexo.getSelectedIndex() == 1){
+            sexo = "Femenino";               
             }
-            else if (Principal.this.amigo.isSelected() && !Principal.this.cliente.isSelected()){
-                amizade = "Amigo";
-            }
-            else if (!Principal.this.amigo.isSelected() && Principal.this.cliente.isSelected()){
-                amizade = "Cliente";
-            }
+        else{
+            sexo = "VITORRRRR";
+        }
             
-            JOptionPane.showMessageDialog(null, "Olá " + nome + 
+        if(Principal.this.amigo.isSelected() && Principal.this.cliente.isSelected()){
+            amizade = "Amigo e Cliente";
+        }
+        else if (Principal.this.amigo.isSelected() && !Principal.this.cliente.isSelected()){
+            amizade = "Amigo";
+        }
+            
+        else if (!Principal.this.amigo.isSelected() && Principal.this.cliente.isSelected()){
+            amizade = "Cliente";
+        }
+            
+        JOptionPane.showMessageDialog(null, "Olá " + nome + 
                                           "\n ID: " + id +
                                           "\n Tipo: " + tipo + 
                                           "\n Sexo: " + sexo +
@@ -118,22 +117,84 @@ public class Principal extends Win{
                                            nome,
                                           
                                           JOptionPane.INFORMATION_MESSAGE);
-            
-            
-            
-        }
-        
-        
-        
     }
     
-    
-    
-    
-    
-    
-    
-    
+    private void cancelar_click(ActionEvent e){
+        System.exit(0);
+    }
+                 
+           
 }
+
+    
+    
+    //Classe do evento clique QUE HERDA DO ACTION LISTENER
+//    private class InserirHandler implements ActionListener{
+//        @Override
+//        public void actionPerformed(ActionEvent e){
+//            String id = Principal.this.id.getText();
+//            String nome = Principal.this.nome.getText();
+//            String telefone = Principal.this.telefone.getText();
+//            String tipo;
+//            String sexo;
+//            String amizade = null;
+//                       
+////            if(Principal.this.pessoa.isSelected()){
+////                tipo = "Pessoa";
+////            }
+////            else{
+////                tipo = "Empresa";
+////            }
+//            //Jeito diferente de fazer IF ELSE
+//            tipo = Principal.this.pessoa.isSelected() ? "Pessoa" : "Empresa";
+//            
+// 
+//            
+//            if(Principal.this.sexo.getSelectedIndex() == 0){
+//                sexo = "Masculino";
+//            }
+//            else if (Principal.this.sexo.getSelectedIndex() == 1){
+//                sexo = "Femenino";               
+//            }
+//            else{
+//                sexo = "VITORRRRR";
+//            }
+//            
+//            if(Principal.this.amigo.isSelected() && Principal.this.cliente.isSelected()){
+//                amizade = "Amigo e Cliente";
+//            }
+//            else if (Principal.this.amigo.isSelected() && !Principal.this.cliente.isSelected()){
+//                amizade = "Amigo";
+//            }
+//            else if (!Principal.this.amigo.isSelected() && Principal.this.cliente.isSelected()){
+//                amizade = "Cliente";
+//            }
+//            
+//            JOptionPane.showMessageDialog(null, "Olá " + nome + 
+//                                          "\n ID: " + id +
+//                                          "\n Tipo: " + tipo + 
+//                                          "\n Sexo: " + sexo +
+//                                          "\n Telefone: " + telefone +
+//                                          "\n Relacionamento: " + amizade,
+//                                           nome,
+//                                          
+//                                          JOptionPane.INFORMATION_MESSAGE);
+//            
+//            
+//            
+//        }
+//        
+//        
+//        
+//    }
+    
+    
+    
+    
+    
+    
+    
+    
+
 
 
